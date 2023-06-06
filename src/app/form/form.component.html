@@ -1,0 +1,19 @@
+<p>form works!</p>
+<ng-content></ng-content>
+<form [formGroup]="form" role="form" (ngSubmit)="submit()">
+    <div>
+        <input type="text" class="form-control" formControlName="username" placeholder="user name">
+        <div>
+            <label *ngIf="submitted && !form.get('username').valid">Enter user name</label>
+        </div>
+    </div>
+    <div>
+        <input type="text" class="form-control" formControlName="email" placeholder="email">
+        <div>
+            <label *ngIf="submitted && !form.get('email').valid">Enter email</label>
+        </div>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
